@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trang chủ</title>
+</head>
+
+<body>
+    <a href='index.html'>TRANG CHỦ</a>
+    <a href='about.html'>ABOUT</a>
+    <h1>Tạo project Spring Boot đầu tiên</h1>
+
+    <p>06 tháng 01, 2022 - 171 lượt xem</p>
+    <hr />
+
+    <p>Chào các bạn, hy vọng sau khi đọc bài viết trước của mình giới thiệu chung về Spring Boot (tại đây), các bạn đã
+        có cái nhìn tổng quan về framework này. Để có hứng thú ngâm cứu tiếp, hãy cùng tạo ra một sản phẩm là một
+        project Spring Boot đầu tiên cùng mình trong bài viết này nhé.</p>
+
+    <h2>Những thứ cần chuẩn bị</h2>
+
+    <p>Có nhiều IDE có thể dùng để code Spring Boot tùy theo thói quen mỗi người, có thể là NetBeans, <b>Eclipse</b> hay
+        <b>IntelliJ</b>. Tuy nhiên, phù hợp và được ưa chuộng nhất là Eclipse và IntelliJ IDEA (bản Ultimate phải trả
+        phí mới có hỗ trợ Spring). Bạn có thể tải 2 IDE trên tại:
+    </p>
+    <b>Eclipse:</b><a href='https://www.eclipse.org/downloads/' tager='salf'>https://www.eclipse.org/downloads/</a>
+    <br />
+    <b>IntelliJ</b> Ultimate Edition:<a href=' https://www.jetbrains.com/idea/download/#section=windows' tager='salf'>
+        https://www.jetbrains.com/idea/download/#section=windows</a>
+    <br />
+    <img src='ảnh spring.png' />
+    <a href='about.html'>CLICK HERE</a>
+    <ol>
+        <p>IDE Eclipse cùng với extension Spring Tool Suite (STS) để phát triển Spring Boot</p>
+        <h2>IntelliJ của JetBrains</h2>
+        <p>Qua trải nghiệm của cá nhân mình và đồng nghiệp, mình khuyên các bạn nên sử dụng IntelliJ để code Spring Boot
+            vì nó đem lại cảm giác rất tốt, gợi ý code thông minh và ít lỗi hơn Eclipse (cũng dễ hiểu, vì Eclipse là
+            hàng miễn phí có license của IntelliJ khá là đắt nên tốt hơn là cũng đúng thôi =)) ) Nhưng không vì thế mà
+            các bạn không có cơ hội trải nghiệm phiên bản xịn xò của IntellJ đâu nhé, đặc biệt là với các bạn sinh viên,
+            chỉ cần có mail <b>edu</b> được nhà trường cung cấp thì các bạn có thể tham gia chương trình<b>GitHub
+                Student
+                Developer Pack</b> với những ưu đãi license rất lớn cho sinh viên sử dụng các tool chất lượng, trong đó
+            có bộ
+            sản phẩm của JetBrains với thời hạn 1 năm, gồm IntelliJ, DataGrip, WebStorm và cực nhiều những IDE chất
+            lượng khác của hãng này. Nếu bạn là sinh viên và muốn trải nghiệm thì hãy tìm hiểu trong bài viết này nhé,
+            chỉ cần vài bước xác thực là bạn đã có thể sử dụng IntelliJ Ultimate miễn phí trong 1 năm rồi.</p>
+        <img src='ảnh giới thiệu.png' />
+        <a href='about.html'>CLICK HERE></a>
+        <p>
+        <ol>GitHub Student Pack với nhiều sản phẩm chất lượng</ol>
+        </p>
+        <h2>Spring Initializr</h2>
+        <p>Như mình đã nói ở bài viết trước, ưu điểm của Spring Boot so với Spring Framework là tối ưu quá trình config
+            dự án cho dev, <b>Spring Initializr</b> chính là một yếu tố quan trọng của quá trình tối ưu đó.</p>
+
+        <p>Spring Initializr là một công cụ giúp chúng ta khởi tạo project Spring Boot một cách nhanh chóng. Spring
+            Initializr có địa chỉ tại <a href='https://start.spring.io/' tager='salf'>https://start.spring.io/</a>,đối
+            với IntelliJ Ultimate thì công cụ này được tích hợp trong IDE luôn, rất tiện.</p>
+        <img src='ảnh spring initializr.png' />
+        <a href='about.html'>CLICK HERE</a>
+        <p>
+        <ol>Giao diện của Spring Initializr</ol>
+        </p>
+        <h3>1. Khai báo các thông tin project</h3>
+
+        <p>Spring Initializr yêu cầu khai báo một số thông tin của project như trong hình trên:
+            <br />
+            <b>Loại project</b>: lựa chọn package manager cho project, Maven hoặc Gradle
+            <br />
+
+            <b>Language</b>: ngôn ngữ lập trình sử dụng cho project
+            <br />
+
+            <b>Spring Boot</b>: phiên bản Spring Boot được sử dụng cho project
+            <br />
+
+            <b>Packaging</b>: lựa chọn loại file build ra, JAR hay là WAR
+            <br />
+
+            <b>Java</b>: phiên bản Java được sử dụng cho project
+
+            Ngoài ra còn có phần Project Metadata với các trường thông tin như:
+            <br />
+
+            <b>Group</b>: thông tin về nhóm project
+            <br />
+
+            <b>Artifact</b>: thông tin về ID project
+            <br />
+
+            <b>Name</b>: tên của project
+            <br />
+
+            <b>Description</b>: mô tả project
+            <br />
+
+            <b>Package name</b>: tên của package project sau khi khởi tạo
+        </p>
+        <h3>2. Lựa chọn dependencies cho project</h3>
+
+        <p>Bước này được thực hiện tại nửa bên phải của màn hình giao diện Spring Initializr, mục đích để lựa chọn các
+            thư viện (lib) bổ trợ cho project chính. Ví dụ, để có thể code web, cần lựa chọn Spring Web, một số
+            dependencies thường gặp khác như:</p>
+        <ul>
+            <li><b>Lombok</b>:</li> hỗ trợ code ngắn gọn bằng cách rút gọn một số boiler-plate code qua annotation như
+            <b>Getter,
+                Setter, Constructor,</b> …. Mình sẽ có một bài viết riêng về Lombok sau nhé.
+            <li><b>Spring Data JPA:</b></li> xử lý data và làm việc với Database qua <b>JPA</b> và <b>Hibernate</b>
+            <li><b>SpringBoot DevTools:</b></li>tính năng hỗ trợ <b>LiveReload</b> giúp khởi động lại ứng dụng nhanh
+            hơn, giảm thời gian chờ sau mỗi lần chỉnh sửa source code.
+
+            <h3>3. Hoàn thành</h3>
+            <p>Sau khi đã cung cấp các thông tin của project và lựa chọn dependencies cần thiết, chỉ cần nhất nút
+                <b>Generate</b>, file zip chứa project sẽ được tải về, bạn chỉ cần giải nén và mở ra bằng những IDE đã
+                được đề cập ở phần đầu là đã có thể code luôn mà không cần phải config gì thêm. Cấu trúc project sau khi
+                giải nén như sau
+                <img src='ảnh project.png' />
+                <a href='about.html'>CLICK HERE</a>
+
+            <h2>Lời kết</h2>
+            <p>Vậy là chúng ta đã hoàn thành việc tạo ra một project Spring Boot đầu tiên khá đơn giản phải không các
+                bạn? Bài viết tới mình sẽ cùng các bạn code một ví dụ nho nhỏ trên project này nhé, xin chào và hẹn gặp
+                lại.</p>
+</body>
+
+</html>
